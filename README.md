@@ -34,17 +34,19 @@ Paperfry automatically follows your desktop's dark/light mode via the XDG deskto
 
 ## Shortcuts
 
-- `Ctrl+S` saves. Unsaved documents use the XDG desktop portal file picker.
-- `Ctrl+Shift+S` saves as.
-- `Ctrl+O` opens a Markdown file through the portal picker.
-- `Ctrl+P` opens the system print dialog.
-- `Ctrl+N` opens a new Paperfry window.
-- `Ctrl+Z`, `Ctrl+Shift+Z`, and `Ctrl+Y` handle undo and redo.
-- `Ctrl+F` searches the document. Use `Enter` or `Ctrl+G` for the next match and `Shift+Enter` for the previous match.
-- `Ctrl+H` opens find and replace.
-- `Ctrl+B`, `Ctrl+I`, and `Ctrl+K` insert bold, italic, and link Markdown.
-- `Ctrl+?` shows the keyboard shortcut reference.
-- `Shift+Enter` small spacing
+| Keys | Action |
+| --- | --- |
+| `Ctrl+S` / `Ctrl+Shift+S` | Save / save as |
+| `Ctrl+O` | Open a Markdown file |
+| `Ctrl+P` | Print |
+| `Ctrl+N` | New window |
+| `Ctrl+Z` / `Ctrl+Y` | Undo / redo |
+| `Ctrl+F` / `Ctrl+H` | Find / replace |
+| `Ctrl+B` / `Ctrl+I` / `Ctrl+K` | Bold / italic / link |
+| `Ctrl+?` | Show shortcuts |
+| `Shift+Enter` | Add spacing |
+
+In search, use `Enter` or `Ctrl+G` for the next match and `Shift+Enter` for the previous one.
 
 Unsaved drafts are recovered after an abnormal exit. Paperfry also watches open files
 and warns before an external change can replace local work.
