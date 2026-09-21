@@ -167,7 +167,7 @@ private slots:
         QCOMPARE(editor->property("wrappedSelectionEnd").toInt(), 12);
     }
 
-    void savesAndOpensFromFooterButtons() {
+    void showsDocumentStatusAndWordCount() {
         const QString mainQmlPath = QFINDTESTDATA("../src/Main.qml");
         QVERIFY(!mainQmlPath.isEmpty());
 
@@ -183,18 +183,14 @@ private slots:
         QVERIFY(!window->findChild<QObject *>(QStringLiteral("renderedPreview")));
         QVERIFY(!window->findChild<QObject *>(QStringLiteral("modeToggle")));
 
-        QObject *saveButton = window->findChild<QObject *>(QStringLiteral("saveButton"));
-        QObject *openButton = window->findChild<QObject *>(QStringLiteral("openButton"));
-        QVERIFY(saveButton);
-        QVERIFY(openButton);
-
-        QSignalSpy saveDialogSpy(&backend, &Backend::saveDialogRequested);
-        QVERIFY(QMetaObject::invokeMethod(saveButton, "clicked"));
-        QCOMPARE(saveDialogSpy.count(), 1);
-
-        QSignalSpy openDialogSpy(&backend, &Backend::openDialogRequested);
-        QVERIFY(QMetaObject::invokeMethod(openButton, "clicked"));
-        QCOMPARE(openDialogSpy.count(), 1);
+        QObject *statusLabel = window->findChild<QObject *>(QStringLiteral("statusLabel"));
+        QObject *wordCountLabel = window->findChild<QObject *>(QStringLiteral("wordCountLabel"));
+        QVERIFY(statusLabel);
+        QVERIFY(wordCountLabel);
+        QVERIFY(!window->findChild<QObject *>(QStringLiteral("saveButton")));
+        QVERIFY(!window->findChild<QObject *>(QStringLiteral("openButton")));
+        QCOMPARE(statusLabel->property("text").toString(), QStringLiteral("Saved"));
+        QCOMPARE(wordCountLabel->property("text").toString(), QStringLiteral("0 Words"));
     }
 
     void scalesTextWithDesktopTextSize() {

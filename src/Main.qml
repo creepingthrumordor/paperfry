@@ -802,43 +802,25 @@ ApplicationWindow {
             anchors.bottom: parent.bottom
             anchors.leftMargin: 12
             anchors.bottomMargin: 10
-            spacing: 12
             opacity: 0.55
 
-            FooterIconButton {
-                objectName: "saveButton"
-                iconName: "save"
-                iconColor: win.mutedColor
-                tooltip: "Save"
-                onClicked: backend.save()
-            }
-
-            FooterIconButton {
-                objectName: "openButton"
-                iconName: "open"
-                iconColor: win.mutedColor
-                tooltip: "Open"
-                onClicked: backend.openDialog()
-            }
-
             Label {
-                text: backend.status
+                objectName: "statusLabel"
+                text: backend.modified ? "Unsaved" : "Saved"
                 color: win.mutedColor
                 font.family: "iA Writer Mono S"
                 font.pixelSize: win.scaledSize(11)
-                visible: text !== ""
-                elide: Text.ElideRight
-                width: Math.min(360, win.width / 3)
                 height: win.scaledSize(16)
                 verticalAlignment: Text.AlignVCenter
             }
         }
 
         Label {
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            anchors.rightMargin: 12
-            anchors.bottomMargin: 10
+            objectName: "wordCountLabel"
+            anchors.left: parent.left
+            anchors.top: parent.top
+            anchors.leftMargin: 12
+            anchors.topMargin: 10
             text: backend.wordCount + (backend.wordCount === 1 ? " Word" : " Words")
             color: win.mutedColor
             opacity: 0.75
