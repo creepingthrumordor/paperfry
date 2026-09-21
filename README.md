@@ -1,20 +1,20 @@
-# Paperfry
+# paperfry
 
 <p align="center">
   <img src="paperfry.png" alt="Paperfry logo" width="180">
 </p>
 
-A simple Markdown writing app built with Qt Quick and C++ that automatically follows system dark/light mode.
+A simple lightweight notepad app for linux. It's better than any simple notepad app available on linux at the moment.
 
 ## Install
 
-### Arch Linux (any system)
+### Arch Linux
 
 Install dependencies and install:
 
 ```sh
 sudo pacman -S qt6-base qt6-declarative xdg-desktop-portal
-git clone
+git clone https://github.com/creepingthrumordor/paperfry.git
 cd paperfry/bin
 sudo ./install
 ```
@@ -40,10 +40,6 @@ Paperfry automatically follows your desktop's dark/light mode via the XDG deskto
 
 Unsaved drafts are recovered after an abnormal exit. Paperfry also watches open files
 and warns before an external change can replace local work.
-
-Text follows the desktop text size (GNOME's `text-scaling-factor` or the equivalent
-portal setting) and re-flows without a restart. The default of 12px leaves Paperfry
-at the size it is designed around; larger and smaller sizes scale from there.
 
 ## Requirements
 
