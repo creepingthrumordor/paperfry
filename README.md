@@ -46,18 +46,16 @@ Paperfry automatically follows your desktop's dark/light mode via the XDG deskto
 | `Ctrl+?` | Show shortcuts |
 | `Shift+Enter` | Add spacing |
 
-In search, use `Enter` or `Ctrl+G` for the next match and `Shift+Enter` for the previous one.
+Use `Enter` or `Ctrl+G` to move to the next search result, and `Shift+Enter` for the previous one.
 
-Unsaved drafts are recovered after an abnormal exit. Paperfry also watches open files
-and warns before an external change can replace local work.
+Drafts are recovered after an abnormal exit, and open files are watched for external changes.
 
 ## Requirements
 
 - Qt 6: `qt6-base`, `qt6-declarative`
-- `xdg-desktop-portal` and a portal backend (e.g. `xdg-desktop-portal-gnome`, `xdg-desktop-portal-kde`, or `xdg-desktop-portal-gtk`)
+- `xdg-desktop-portal` with a backend such as GNOME, KDE, or GTK
 
-The iA Writer Mono font is bundled under the SIL Open Font License 1.1; see
-`fonts/OFL.txt`. The font is copyright Information Architects Inc. and based on
-IBM Plex, copyright IBM Corp.
+The bundled iA Writer Mono font is provided under the
+[SIL Open Font License 1.1](fonts/OFL.txt). It is based on IBM Plex.
 
-Logo drawn by me using [Pixilart](https://www.pixilart.com/).
+Logo drawn with [Pixilart](https://www.pixilart.com/).
