@@ -6,6 +6,14 @@
 
 A simple lightweight notepad app for linux. It's better than any simple notepad app available on linux at the moment.
 
+## Showcase
+
+Paperfry keeps writing distraction-free with a clean, keyboard-first interface.
+
+<p align="center">
+  <img src="screenshot.png" alt="Paperfry editing a Markdown document" width="758">
+</p>
+
 ## Install
 
 ### Arch Linux
@@ -32,11 +40,11 @@ Paperfry automatically follows your desktop's dark/light mode via the XDG deskto
 - `Ctrl+P` opens the system print dialog.
 - `Ctrl+N` opens a new Paperfry window.
 - `Ctrl+Z`, `Ctrl+Shift+Z`, and `Ctrl+Y` handle undo and redo.
-- `Super+F` toggles fullscreen. Qt maps this key as `Meta+F`.
 - `Ctrl+F` searches the document. Use `Enter` or `Ctrl+G` for the next match and `Shift+Enter` for the previous match.
 - `Ctrl+H` opens find and replace.
 - `Ctrl+B`, `Ctrl+I`, and `Ctrl+K` insert bold, italic, and link Markdown.
 - `Ctrl+?` shows the keyboard shortcut reference.
+- `Shift+Enter` small spacing
 
 Unsaved drafts are recovered after an abnormal exit. Paperfry also watches open files
 and warns before an external change can replace local work.
@@ -49,3 +57,5 @@ and warns before an external change can replace local work.
 The iA Writer Mono font is bundled under the SIL Open Font License 1.1; see
 `fonts/OFL.txt`. The font is copyright Information Architects Inc. and based on
 IBM Plex, copyright IBM Corp.
+
+Logo made by me using [Pixilart](https://www.pixilart.com/).
