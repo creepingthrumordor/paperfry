@@ -1,5 +1,9 @@
 # Paperfry
 
+<p align="center">
+  <img src="paperfry.png" alt="Paperfry logo" width="180">
+</p>
+
 A simple Markdown writing app built with Qt Quick and C++ that automatically follows system dark/light mode.
 
 ## Install
