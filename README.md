@@ -58,4 +58,4 @@ The iA Writer Mono font is bundled under the SIL Open Font License 1.1; see
 `fonts/OFL.txt`. The font is copyright Information Architects Inc. and based on
 IBM Plex, copyright IBM Corp.
 
-Logo made by me using [Pixilart](https://www.pixilart.com/).
+Logo drawn by me using [Pixilart](https://www.pixilart.com/).
