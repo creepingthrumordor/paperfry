@@ -4,7 +4,7 @@
   <img src="paperfry1.png" alt="Paperfry logo" width="260">
 </p>
 
-A simple lightweight notepad app for linux. It's better than any simple notepad app available on linux at the moment.
+A simple lightweight notepad app for linux. It's better than any notepad app available on linux at the moment.
 
 ## Showcase
 
