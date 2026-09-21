@@ -8,10 +8,10 @@ A simple lightweight notepad app for linux. It's better than any simple notepad 
 
 ## Showcase
 
-Paperfry keeps writing distraction-free with a clean, keyboard-first interface.
+
 
 <p align="center">
-  <img src="screenshot.png" alt="Paperfry editing a Markdown document" width="758">
+  <img src="screenshot-showcase.png" alt="Paperfry editing a Markdown document" width="830">
 </p>
 
 ## Install
