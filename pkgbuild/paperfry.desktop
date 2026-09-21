@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Paperfry
+GenericName=Markdown Writer
+Comment=Dead-simple Markdown writing app
+Exec=env QT_QPA_PLATFORMTHEME=gtk3 paperfry %f
+Icon=paperfry
+Terminal=false
+Categories=Office;WordProcessor;TextEditor;
+MimeType=text/markdown;text/x-markdown;text/plain;
+Keywords=markdown;write;notes;text;editor;
+StartupWMClass=paperfry

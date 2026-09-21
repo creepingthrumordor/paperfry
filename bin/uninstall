@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+# uninstall — remove a previously installed paperfry.
+# Usage: sudo ./bin/uninstall
+#        PREFIX=/usr/local sudo ./bin/uninstall
+set -eu
+
+PREFIX="${PREFIX:-/usr}"
+
+# ── Check for root ──────────────────────────────────────────────────────────
+if [ "$(id -u)" -ne 0 ]; then
+    echo "error: run as root (e.g. sudo ./bin/uninstall)" >&2
+    exit 1
+fi
+
+# ── Remove installed files ───────────────────────────────────────────────────
+FILES="
+$PREFIX/bin/paperfry
+$PREFIX/share/icons/hicolor/scalable/apps/paperfry.svg
+$PREFIX/share/applications/paperfry.desktop
+$PREFIX/share/licenses/paperfry/LICENSE
+$PREFIX/share/licenses/paperfry/OFL.txt
+"
+
+removed=0
+for f in $FILES; do
+    if [ -f "$f" ]; then
+        rm -f "$f"
+        echo "  removed $f"
+        removed=$((removed + 1))
+    fi
+done
+
+# Remove empty license dir
+rmdir "$PREFIX/share/licenses/paperfry" 2>/dev/null || true
+
+# ── Refresh caches ───────────────────────────────────────────────────────────
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -q -t -f "$PREFIX/share/icons/hicolor" || true
+fi
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q "$PREFIX/share/applications" || true
+fi
+
+if [ "$removed" -eq 0 ]; then
+    echo "Nothing to uninstall — no paperfry files found under $PREFIX"
+else
+    echo ""
+    echo "✓ paperfry uninstalled ($removed files removed)"
+    echo "  User config at ~/.config/paperfry/ was left untouched."
+fi

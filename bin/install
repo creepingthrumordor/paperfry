@@ -1,0 +1,65 @@
+#!/usr/bin/env sh
+# install — build and install paperfry system-wide.
+# Usage: sudo ./bin/install
+#        PREFIX=/usr/local sudo ./bin/install   (custom prefix)
+set -eu
+
+PREFIX="${PREFIX:-/usr}"
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+
+# ── Check for root ──────────────────────────────────────────────────────────
+if [ "$(id -u)" -ne 0 ]; then
+    echo "error: run as root (e.g. sudo ./bin/install)" >&2
+    exit 1
+fi
+
+# ── Build ────────────────────────────────────────────────────────────────────
+echo "==> Building paperfry..."
+"$ROOT/bin/build"
+
+BINARY="$ROOT/build/paperfry"
+if [ ! -f "$BINARY" ]; then
+    echo "error: build did not produce $BINARY" >&2
+    exit 1
+fi
+
+# ── Install binary ───────────────────────────────────────────────────────────
+echo "==> Installing binary to $PREFIX/bin/paperfry"
+install -Dm755 "$BINARY" "$PREFIX/bin/paperfry"
+
+# ── Install icon ─────────────────────────────────────────────────────────────
+SVG="$ROOT/pkgbuild/paperfry.svg"
+if [ -f "$SVG" ]; then
+    echo "==> Installing icon"
+    install -Dm644 "$SVG" \
+        "$PREFIX/share/icons/hicolor/scalable/apps/paperfry.svg"
+fi
+
+# ── Install .desktop entry ───────────────────────────────────────────────────
+DESKTOP="$ROOT/pkgbuild/paperfry.desktop"
+if [ -f "$DESKTOP" ]; then
+    echo "==> Installing .desktop entry"
+    install -Dm644 "$DESKTOP" \
+        "$PREFIX/share/applications/paperfry.desktop"
+fi
+
+# ── Install licenses ─────────────────────────────────────────────────────────
+echo "==> Installing licenses"
+install -Dm644 "$ROOT/LICENSE" \
+    "$PREFIX/share/licenses/paperfry/LICENSE"
+if [ -f "$ROOT/fonts/OFL.txt" ]; then
+    install -Dm644 "$ROOT/fonts/OFL.txt" \
+        "$PREFIX/share/licenses/paperfry/OFL.txt"
+fi
+
+# ── Refresh caches ───────────────────────────────────────────────────────────
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    gtk-update-icon-cache -q -t -f "$PREFIX/share/icons/hicolor" || true
+fi
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database -q "$PREFIX/share/applications" || true
+fi
+
+echo ""
+echo "✓ paperfry installed to $PREFIX/bin/paperfry"
+echo "  Run 'paperfry' to start, or find it in your application launcher."

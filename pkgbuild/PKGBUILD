@@ -1,0 +1,28 @@
+# Maintainer: David Heinemeier Hansson <david@hey.com>
+
+pkgname=paperfry
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='simple notepad app for linux'
+arch=('x86_64')
+url='https://github.com/omacom-io/paperfry'
+license=('MIT')
+install='paperfry.install'
+depends=('qt6-base' 'qt6-declarative' 'xdg-desktop-portal')
+makedepends=('gcc' 'make' 'qt6-base' 'qt6-declarative')
+source=()
+sha256sums=()
+
+build() {
+  cd "$startdir/.."
+  ./bin/build
+}
+
+package() {
+  cd "$startdir/.."
+  /usr/bin/install -Dm755 build/paperfry "$pkgdir/usr/bin/paperfry"
+  /usr/bin/install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  /usr/bin/install -Dm644 fonts/OFL.txt "$pkgdir/usr/share/licenses/$pkgname/OFL.txt"
+  /usr/bin/install -Dm644 "$startdir/paperfry.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/paperfry.svg"
+  /usr/bin/install -Dm644 "$startdir/paperfry.desktop" "$pkgdir/usr/share/applications/paperfry.desktop"
+}
