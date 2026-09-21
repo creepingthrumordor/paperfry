@@ -1,7 +1,7 @@
 # paperfry
 
 <p align="center">
-  <img src="paperfry.png" alt="Paperfry logo" width="180">
+  <img src="paperfry1.png" alt="Paperfry logo" width="180">
 </p>
 
 A simple lightweight notepad app for linux. It's better than any simple notepad app available on linux at the moment.
