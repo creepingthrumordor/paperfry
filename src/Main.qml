@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Controls.Material
-import QtQuick.Dialogs as Dialogs
 import QtQuick.Layouts
 import QtQuick.Window
 import "EditorMutations.js" as EditorMutations
@@ -241,12 +240,16 @@ ApplicationWindow {
         target: backend
 
         function onOpenDialogRequested() {
-            openFileDialog.open();
+            var selected = backend.nativeOpenFileDialog();
+            if (!selected.isEmpty())
+                win.requestOpen(selected);
         }
 
         function onSaveDialogRequested(suggestedUrl) {
-            saveFileDialog.selectedFile = suggestedUrl;
-            saveFileDialog.open();
+            if (!backend.nativeSaveFileDialog(suggestedUrl)) {
+                win.awaitingPendingSave = false;
+                win.pendingAction = "";
+            }
         }
 
         function onCloseAfterSave() {
@@ -264,27 +267,6 @@ ApplicationWindow {
             externalChangeDialog.deleted = deleted;
             externalChangeDialog.locallyModified = locallyModified;
             externalChangeDialog.open();
-        }
-    }
-
-    Dialogs.FileDialog {
-        id: openFileDialog
-        title: "Open File"
-        fileMode: Dialogs.FileDialog.OpenFile
-        nameFilters: ["Markdown files (*.md *.markdown)", "All files (*)"]
-        onAccepted: win.requestOpen(selectedFile)
-    }
-
-    Dialogs.FileDialog {
-        id: saveFileDialog
-        title: "Save File"
-        fileMode: Dialogs.FileDialog.SaveFile
-        nameFilters: ["Markdown files (*.md *.markdown)", "All files (*)"]
-        onAccepted: backend.saveAs(selectedFile)
-        onRejected: {
-            backend.fileDialogCanceled();
-            win.awaitingPendingSave = false;
-            win.pendingAction = "";
         }
     }
 

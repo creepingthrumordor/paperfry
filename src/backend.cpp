@@ -7,6 +7,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QDesktopServices>
+#include <QFileDialog>
 #include <QGuiApplication>
 #include <QMimeData>
 #include <QProcess>
@@ -206,6 +207,15 @@ void Backend::openDialog() {
     emit openDialogRequested();
 }
 
+QUrl Backend::nativeOpenFileDialog() {
+    const QUrl selected = QFileDialog::getOpenFileUrl(
+        nullptr,
+        QStringLiteral("Open File"),
+        QUrl::fromLocalFile(QDir::homePath()),
+        QStringLiteral("Markdown files (*.md *.markdown);;All files (*)"));
+    return selected;
+}
+
 void Backend::open(const QUrl &url) {
     if (!url.isLocalFile()) {
         setStatus(QStringLiteral("Only local files can be opened."));
@@ -251,6 +261,21 @@ void Backend::saveForClose() {
 
 void Backend::saveAsDialog() {
     emit saveDialogRequested(suggestedSaveUrl());
+}
+
+bool Backend::nativeSaveFileDialog(const QUrl &suggestedUrl) {
+    const QUrl selected = QFileDialog::getSaveFileUrl(
+        nullptr,
+        QStringLiteral("Save File"),
+        suggestedUrl,
+        QStringLiteral("Markdown files (*.md *.markdown);;All files (*)"));
+    if (selected.isEmpty()) {
+        fileDialogCanceled();
+        return false;
+    }
+
+    saveAs(selected);
+    return true;
 }
 
 void Backend::saveAs(const QUrl &url) {

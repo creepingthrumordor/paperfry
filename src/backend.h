@@ -55,10 +55,12 @@ public:
 
     Q_INVOKABLE void attachDocument(QObject *textDocument);
     Q_INVOKABLE void openDialog();
+    Q_INVOKABLE QUrl nativeOpenFileDialog();
     Q_INVOKABLE void open(const QUrl &url);
     Q_INVOKABLE void save();
     Q_INVOKABLE void saveForClose();
     Q_INVOKABLE void saveAsDialog();
+    Q_INVOKABLE bool nativeSaveFileDialog(const QUrl &suggestedUrl);
     Q_INVOKABLE void saveAs(const QUrl &url);
     Q_INVOKABLE void fileDialogCanceled();
     Q_INVOKABLE void discardRecovery();
