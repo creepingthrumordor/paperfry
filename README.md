@@ -4,14 +4,14 @@
   <img src="paperfry1.png" alt="Paperfry logo" width="260">
 </p>
 
-A simple lightweight notepad app for linux. It's better than any notepad app available on linux at the moment.
+A simple, lightweight notepad app for Linux that is better than any other notepad app currently available. It currently uses around 350 MB of RAM, which may be reduced in future updates
 
 ## Showcase
 
 
 
 <p align="center">
-  <img src="screenshot-showcase.png" alt="Paperfry editing a Markdown document" width="830">
+  <img src="screenshot.png" alt="Paperfry editing a Markdown document" width="830">
 </p>
 
 ## Install
@@ -54,8 +54,5 @@ Drafts are recovered after an abnormal exit, and open files are watched for exte
 
 - Qt 6: `qt6-base`, `qt6-declarative`
 - `xdg-desktop-portal` with a backend such as GNOME, KDE, or GTK
-
-The bundled iA Writer Mono font is provided under the
-[SIL Open Font License 1.1](fonts/OFL.txt). It is based on IBM Plex.
 
 Logo drawn with [Pixilart](https://www.pixilart.com/).
