@@ -40,7 +40,7 @@
 
 #include "markdownhighlighter.h"
 
-constexpr qreal typoraLineHeightPercent = 140;
+constexpr qreal typoraLineHeightPercent = 120;
 const QString lastSaveDirectorySetting = QStringLiteral("file/lastSaveDirectory");
 
 QString Backend::normalizedLinkUrl(const QString &clipboardText) {
