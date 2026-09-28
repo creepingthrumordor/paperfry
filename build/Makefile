@@ -775,11 +775,7 @@ qrc_resources.cpp: ../src/resources.qrc \
 		../src/FooterIconButton.qml \
 		../src/SquareDialogButton.qml \
 		../src/EditorMutations.js \
-		../src/UnsavedChangesDialog.qml \
-		../fonts/iAWriterMonoS-BoldItalic.ttf \
-		../fonts/iAWriterMonoS-Bold.ttf \
-		../fonts/iAWriterMonoS-Regular.ttf \
-		../fonts/iAWriterMonoS-Italic.ttf
+		../src/UnsavedChangesDialog.qml
 	/usr/lib/qt6/rcc -name resources ../src/resources.qrc -o qrc_resources.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h

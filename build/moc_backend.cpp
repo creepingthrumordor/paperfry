@@ -59,11 +59,13 @@ template <> constexpr inline auto Backend::qt_create_metaobjectdata<qt_meta_tag_
         "attachDocument",
         "textDocument",
         "openDialog",
+        "nativeOpenFileDialog",
         "open",
         "url",
         "save",
         "saveForClose",
         "saveAsDialog",
+        "nativeSaveFileDialog",
         "saveAs",
         "fileDialogCanceled",
         "discardRecovery",
@@ -137,81 +139,87 @@ template <> constexpr inline auto Backend::qt_create_metaobjectdata<qt_meta_tag_
         }}),
         // Method 'openDialog'
         QtMocHelpers::MethodData<void()>(20, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'nativeOpenFileDialog'
+        QtMocHelpers::MethodData<QUrl()>(21, 2, QMC::AccessPublic, 0x80000000 | 12),
         // Method 'open'
-        QtMocHelpers::MethodData<void(const QUrl &)>(21, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 12, 22 },
+        QtMocHelpers::MethodData<void(const QUrl &)>(22, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 12, 23 },
         }}),
         // Method 'save'
-        QtMocHelpers::MethodData<void()>(23, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'saveForClose'
         QtMocHelpers::MethodData<void()>(24, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'saveAsDialog'
+        // Method 'saveForClose'
         QtMocHelpers::MethodData<void()>(25, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'saveAsDialog'
+        QtMocHelpers::MethodData<void()>(26, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'nativeSaveFileDialog'
+        QtMocHelpers::MethodData<bool(const QUrl &)>(27, 2, QMC::AccessPublic, QMetaType::Bool, {{
+            { 0x80000000 | 12, 13 },
+        }}),
         // Method 'saveAs'
-        QtMocHelpers::MethodData<void(const QUrl &)>(26, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 12, 22 },
+        QtMocHelpers::MethodData<void(const QUrl &)>(28, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 12, 23 },
         }}),
         // Method 'fileDialogCanceled'
-        QtMocHelpers::MethodData<void()>(27, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'discardRecovery'
-        QtMocHelpers::MethodData<void()>(28, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'reloadFromDisk'
         QtMocHelpers::MethodData<void()>(29, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'keepExternalVersion'
+        // Method 'discardRecovery'
         QtMocHelpers::MethodData<void()>(30, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'printDocument'
+        // Method 'reloadFromDisk'
         QtMocHelpers::MethodData<void()>(31, 2, QMC::AccessPublic, QMetaType::Void),
-        // Method 'newWindow'
+        // Method 'keepExternalVersion'
         QtMocHelpers::MethodData<void()>(32, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'printDocument'
+        QtMocHelpers::MethodData<void()>(33, 2, QMC::AccessPublic, QMetaType::Void),
+        // Method 'newWindow'
+        QtMocHelpers::MethodData<void()>(34, 2, QMC::AccessPublic, QMetaType::Void),
         // Method 'clipboardUrl'
-        QtMocHelpers::MethodData<QString() const>(33, 2, QMC::AccessPublic, QMetaType::QString),
+        QtMocHelpers::MethodData<QString() const>(35, 2, QMC::AccessPublic, QMetaType::QString),
         // Method 'clipboardText'
-        QtMocHelpers::MethodData<QString() const>(34, 2, QMC::AccessPublic, QMetaType::QString),
+        QtMocHelpers::MethodData<QString() const>(36, 2, QMC::AccessPublic, QMetaType::QString),
         // Method 'editorTextChanged'
-        QtMocHelpers::MethodData<bool()>(35, 2, QMC::AccessPublic, QMetaType::Bool),
+        QtMocHelpers::MethodData<bool()>(37, 2, QMC::AccessPublic, QMetaType::Bool),
         // Method 'hiddenRangesAt'
-        QtMocHelpers::MethodData<QVariantList(int) const>(36, 2, QMC::AccessPublic, 0x80000000 | 37, {{
-            { QMetaType::Int, 38 },
+        QtMocHelpers::MethodData<QVariantList(int) const>(38, 2, QMC::AccessPublic, 0x80000000 | 39, {{
+            { QMetaType::Int, 40 },
         }}),
         // Method 'setSearchHighlight'
-        QtMocHelpers::MethodData<void(const QString &, int)>(39, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 40 }, { QMetaType::Int, 41 },
+        QtMocHelpers::MethodData<void(const QString &, int)>(41, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 42 }, { QMetaType::Int, 43 },
         }}),
         // Method 'openExternalUrl'
-        QtMocHelpers::MethodData<void(const QUrl &)>(42, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { 0x80000000 | 12, 22 },
+        QtMocHelpers::MethodData<void(const QUrl &)>(44, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 12, 23 },
         }}),
         // Method 'windowGeometry'
-        QtMocHelpers::MethodData<QVariantMap() const>(43, 2, QMC::AccessPublic, 0x80000000 | 44),
+        QtMocHelpers::MethodData<QVariantMap() const>(45, 2, QMC::AccessPublic, 0x80000000 | 46),
         // Method 'saveWindowGeometry'
-        QtMocHelpers::MethodData<void(int, int, int, int, bool)>(45, 2, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Int, 46 }, { QMetaType::Int, 47 }, { QMetaType::Int, 48 }, { QMetaType::Int, 49 },
-            { QMetaType::Bool, 50 },
+        QtMocHelpers::MethodData<void(int, int, int, int, bool)>(47, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Int, 48 }, { QMetaType::Int, 49 }, { QMetaType::Int, 50 }, { QMetaType::Int, 51 },
+            { QMetaType::Bool, 52 },
         }}),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'fileUrl'
-        QtMocHelpers::PropertyData<QUrl>(51, 0x80000000 | 12, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
+        QtMocHelpers::PropertyData<QUrl>(53, 0x80000000 | 12, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 0),
         // property 'fileName'
-        QtMocHelpers::PropertyData<QString>(52, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
+        QtMocHelpers::PropertyData<QString>(54, QMetaType::QString, QMC::DefaultPropertyFlags, 0),
         // property 'modified'
-        QtMocHelpers::PropertyData<bool>(53, QMetaType::Bool, QMC::DefaultPropertyFlags, 1),
+        QtMocHelpers::PropertyData<bool>(55, QMetaType::Bool, QMC::DefaultPropertyFlags, 1),
         // property 'status'
-        QtMocHelpers::PropertyData<QString>(54, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
+        QtMocHelpers::PropertyData<QString>(56, QMetaType::QString, QMC::DefaultPropertyFlags, 2),
         // property 'wordCount'
-        QtMocHelpers::PropertyData<int>(55, QMetaType::Int, QMC::DefaultPropertyFlags, 3),
+        QtMocHelpers::PropertyData<int>(57, QMetaType::Int, QMC::DefaultPropertyFlags, 3),
         // property 'darkMode'
-        QtMocHelpers::PropertyData<bool>(56, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 4),
+        QtMocHelpers::PropertyData<bool>(58, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 4),
         // property 'textScale'
-        QtMocHelpers::PropertyData<qreal>(57, QMetaType::QReal, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
+        QtMocHelpers::PropertyData<qreal>(59, QMetaType::QReal, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 5),
         // property 'themeBackground'
-        QtMocHelpers::PropertyData<QString>(58, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
-        // property 'themeForeground'
-        QtMocHelpers::PropertyData<QString>(59, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
-        // property 'themeAccent'
         QtMocHelpers::PropertyData<QString>(60, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
-        // property 'themeSelection'
+        // property 'themeForeground'
         QtMocHelpers::PropertyData<QString>(61, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
+        // property 'themeAccent'
+        QtMocHelpers::PropertyData<QString>(62, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
+        // property 'themeSelection'
+        QtMocHelpers::PropertyData<QString>(63, QMetaType::QString, QMC::DefaultPropertyFlags, 6),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -247,30 +255,34 @@ void Backend::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 11: _t->externalChangeDetected((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2]))); break;
         case 12: _t->attachDocument((*reinterpret_cast<std::add_pointer_t<QObject*>>(_a[1]))); break;
         case 13: _t->openDialog(); break;
-        case 14: _t->open((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
-        case 15: _t->save(); break;
-        case 16: _t->saveForClose(); break;
-        case 17: _t->saveAsDialog(); break;
-        case 18: _t->saveAs((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
-        case 19: _t->fileDialogCanceled(); break;
-        case 20: _t->discardRecovery(); break;
-        case 21: _t->reloadFromDisk(); break;
-        case 22: _t->keepExternalVersion(); break;
-        case 23: _t->printDocument(); break;
-        case 24: _t->newWindow(); break;
-        case 25: { QString _r = _t->clipboardUrl();
-            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 26: { QString _r = _t->clipboardText();
-            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
-        case 27: { bool _r = _t->editorTextChanged();
+        case 14: { QUrl _r = _t->nativeOpenFileDialog();
+            if (_a[0]) *reinterpret_cast<QUrl*>(_a[0]) = std::move(_r); }  break;
+        case 15: _t->open((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
+        case 16: _t->save(); break;
+        case 17: _t->saveForClose(); break;
+        case 18: _t->saveAsDialog(); break;
+        case 19: { bool _r = _t->nativeSaveFileDialog((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1])));
             if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
-        case 28: { QVariantList _r = _t->hiddenRangesAt((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])));
+        case 20: _t->saveAs((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
+        case 21: _t->fileDialogCanceled(); break;
+        case 22: _t->discardRecovery(); break;
+        case 23: _t->reloadFromDisk(); break;
+        case 24: _t->keepExternalVersion(); break;
+        case 25: _t->printDocument(); break;
+        case 26: _t->newWindow(); break;
+        case 27: { QString _r = _t->clipboardUrl();
+            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
+        case 28: { QString _r = _t->clipboardText();
+            if (_a[0]) *reinterpret_cast<QString*>(_a[0]) = std::move(_r); }  break;
+        case 29: { bool _r = _t->editorTextChanged();
+            if (_a[0]) *reinterpret_cast<bool*>(_a[0]) = std::move(_r); }  break;
+        case 30: { QVariantList _r = _t->hiddenRangesAt((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])));
             if (_a[0]) *reinterpret_cast<QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 29: _t->setSearchHighlight((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
-        case 30: _t->openExternalUrl((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
-        case 31: { QVariantMap _r = _t->windowGeometry();
+        case 31: _t->setSearchHighlight((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2]))); break;
+        case 32: _t->openExternalUrl((*reinterpret_cast<std::add_pointer_t<QUrl>>(_a[1]))); break;
+        case 33: { QVariantMap _r = _t->windowGeometry();
             if (_a[0]) *reinterpret_cast<QVariantMap*>(_a[0]) = std::move(_r); }  break;
-        case 32: _t->saveWindowGeometry((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[3])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[4])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[5]))); break;
+        case 34: _t->saveWindowGeometry((*reinterpret_cast<std::add_pointer_t<int>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[2])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[3])),(*reinterpret_cast<std::add_pointer_t<int>>(_a[4])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[5]))); break;
         default: ;
         }
     }
@@ -346,14 +358,14 @@ int Backend::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 33)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 33;
+        _id -= 35;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 33)
+        if (_id < 35)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 33;
+        _id -= 35;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
