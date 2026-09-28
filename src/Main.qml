@@ -75,7 +75,6 @@ ApplicationWindow {
 
     FontMetrics {
         id: writerFontMetrics
-        font.family: "iA Writer Mono S"
         font.pixelSize: win.editorFontPixelSize
     }
 
@@ -527,7 +526,6 @@ ApplicationWindow {
                 color: win.textColor
                 selectedTextColor: win.strongTextColor
                 selectionColor: win.selectionFill
-                font.family: "iA Writer Mono S"
                 font.pixelSize: win.editorFontPixelSize
                 font.weight: Font.Normal
                 // Native rendering hints glyphs to the pixel grid, which is
@@ -790,7 +788,6 @@ ApplicationWindow {
                 objectName: "statusLabel"
                 text: backend.modified ? "Unsaved" : "Saved"
                 color: win.mutedColor
-                font.family: "iA Writer Mono S"
                 font.pixelSize: win.scaledSize(11)
                 height: win.scaledSize(16)
                 verticalAlignment: Text.AlignVCenter
@@ -806,7 +803,6 @@ ApplicationWindow {
             text: backend.wordCount + (backend.wordCount === 1 ? " Word" : " Words")
             color: win.mutedColor
             opacity: 0.75
-            font.family: "iA Writer Mono S"
             font.pixelSize: win.scaledSize(11)
         }
 
